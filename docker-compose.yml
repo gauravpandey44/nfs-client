@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+   nfs-pi:
+      build:
+         context: .
+      volumes:
+      - /mnt/NFS-PI:/mnt/nfs-1:shared
+      network_mode: host
+      privileged: true
+      restart: always
+      environment:
+         SERVER: 192.168.2.204
+         SHARE: "/"
